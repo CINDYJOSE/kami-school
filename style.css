@@ -1,0 +1,12 @@
+.c-item {
+height: 480px;
+}
+c-image{
+height: 100px;
+object-fit: cover;
+filter:brightness(0.6)
+}
+. carousel-item{
+    margin-top: 0;
+    font-size: larger;
+}
