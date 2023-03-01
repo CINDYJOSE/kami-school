@@ -6,7 +6,16 @@ height: 100px;
 object-fit: cover;
 filter:brightness(0.6)
 }
-. carousel-item{
+.carousel-item{
     margin-top: 0;
+    font-size: larger;
+}
+.nav-link:hover{
+    color: blue;
+    font-size: larger;
+}
+
+.navbar-brand{
+    color: blue;
     font-size: larger;
 }
