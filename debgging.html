@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="css/bootstrap-5.3/css/bootstrap.css">
+  </head>
+  <body>
+    <div w3-include-html="navbar.html"></div>
+    
+    <!--av ar starts here -->
+
+ <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">dashboard</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link " href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="account/Login.html"> <i class="bi bi-door-open"></i>  Logn in</a></li>
+            <li><a class="dropdown-item" href="account/register.html"> <i class="bi bi-pencil"></i>  Register</a></li>
+          </ul>
+          
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- ave ar eds here -->
+  
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="hero carousel">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/kami 5.jpg" class="d-block w-100" alt="slide1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>kami elemetary school</h5>
+          <p>expect results at kami.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/kami2.jpg" class="d-block w-100" alt="slide2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 id="school"> KAMI ELEMETARY SCHOOL</h5>
+          <p>my child ejoys kami classes.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/kami3.jpg" class="d-block w-100" alt="slide3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>good teachers at kami</h5>
+          <p>your kid will like it at kami.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+
+    
+  </div>
+  <script src="css/bootstrap-5.3/js/bootstrap.bundle.js"></script>
+
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    function getSchool(){
+        var schoolName = document.getElementById("school");
+        console.log(schoolName);
+    }
+    getSchool();
+    </script>
+  </body>
+ 
